@@ -2,6 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../Hooks/useFirebase";
+import MenuBar from "../MenuBar/MenuBar";
 
 const AddBooking = () => {
     const { user } = useFirebase();
@@ -33,6 +34,8 @@ const AddBooking = () => {
 
     return (
         <div>
+            <div className="pb-5"><MenuBar></MenuBar></div>
+
             <h1 className="mt-5 text-center text-dark">Please Add Booking</h1>
             <div className="login-box w-25 m-auto mt-5">
                 <div className="event-box border border d-flex justify-content-center align-items-center">

@@ -18,23 +18,14 @@ const LogIn = () => {
     const handleGoogleSignin = () => {
         logInWithGoogle()
             .then((result) => {
-                history.push(location.state?.from || "/home");
+                // history.push(location.state?.from || "/home");
                 // console.log(location.state?.from,"google er te");
                 setUser(result.user);
             })
             .finally(() => setIsLoading(false));
     };
 
-    const handleGitSignin = () => {
-        gitHubSignIn()
-            .then((result) => {
-                history.push(location.state?.from || "/home");
-                // console.log(location.state?.from, "facebook er te");
-                setUser(result.user);
-                // console.log("facebbok user", result.user)
-            })
-            .finally(() => setIsLoading(false));
-    };
+
 
 
 
