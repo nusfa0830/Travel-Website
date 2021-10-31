@@ -12,11 +12,11 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 const ClientReview = () => {
     return (
         <div className="py-4" >
-            <div className="text-center p-5">
-                <h1>Our Top Reviews
+            <div className="text-center star-icon p-5">
+                <h1>Travellers Review
                 </h1>
             </div>
-            {/* <!-------- happy-client-column---------> */}
+            {/* <!-------- happy-traveller-column---------> */}
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
                 <div className="col">
@@ -48,9 +48,7 @@ const ClientReview = () => {
                         <div className="text-center">
                             <h6> <span className="text-primary" />John Miles </h6>
                         </div>
-                        <div className="d-flex justify-content-center">
-                            <h6>  Banker </h6>
-                        </div>
+
 
                     </div>
                 </div>
@@ -81,9 +79,7 @@ const ClientReview = () => {
                         <div className="text-center">
                             <h6> <span className="text-primary" /> Taylor Swift </h6>
                         </div>
-                        <div className="text-center">
-                            <h6> Banker  </h6>
-                        </div>
+
 
                     </div>
                 </div>
@@ -116,9 +112,7 @@ const ClientReview = () => {
                         <div className="text-center">
                             <h6> <span className="text-primary" /> Regina Miles </h6>
                         </div>
-                        <div className="text-center">
-                            <h6> Student </h6>
-                        </div>
+
                     </div>
                 </div>
             </div>

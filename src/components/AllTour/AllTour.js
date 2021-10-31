@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
-import Footer from '../Footer/Footer';
+
 import MenuBar from '../MenuBar/MenuBar';
 import Tour from '../Tour/Tour';
 
@@ -40,7 +40,7 @@ const AllTour = () => {
                     <Row xs={1} md={3} className="g-4">
                         {
                             allTour.map(tour => <Tour key={tour.key}
-                                tour={tour} ></Tour>
+                                tour={tour} id={tour._id} ></Tour>
 
                             )
                         }

@@ -14,15 +14,16 @@ import AllTour from './components/AllTour/AllTour';
 import TourDetails from './components/TourDetails/TourDetails';
 import LogIn from './components/LogIn/LogIn';
 import AuthProvider from './context/AuthProvider';
-import AddEvent from './components/AddEvent/AddEvent';
+
 import PrivateRoute from './Private/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
 
 
-import OrderServices from './components/OrderServices/OrderServices';
+
 import Register from './components/Register/Register';
 import AdminDashBoard from './components/AdminDashBoard/AdminDashBoard';
 import MyBooking from './components/MyBooking/MyBooking';
+import AddBooking from './components/AddEvent/AddEvent';
 
 
 
@@ -52,12 +53,11 @@ function App() {
               </Home>
             </Route>
 
-            <PrivateRoute exact path="/alltour" >
+            <Route exact path="/alltour" >
               <AllTour></AllTour>
-            </PrivateRoute>
-            <PrivateRoute exact path="/alltour/:key" >
+            </Route>
+            <PrivateRoute exact path="/alltour/:_id" >
               <TourDetails
-
               ></TourDetails>
             </PrivateRoute>
             <Route path="/login">
@@ -66,27 +66,22 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route exact path="/tour/:key">
-              <OrderServices></OrderServices>
-            </Route>
-            <PrivateRoute path="/addevent">
-              <AddEvent></AddEvent>
-            </PrivateRoute>
-
-            <Route exact path="/dashboard">
+            <Route exact path="/tour/:_id">
               <AdminDashBoard></AdminDashBoard>
             </Route>
+            <PrivateRoute path="/addbooking">
+              <AddBooking></AddBooking>
+            </PrivateRoute>
+            <PrivateRoute exact path="/dashboard">
+              <AdminDashBoard></AdminDashBoard>
+            </PrivateRoute>
             <Route exact path="/myCart">
               <MyBooking></MyBooking>
             </Route>
-
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>
-
-
           </Switch>
-
         </Router>
       </AuthProvider>
     </div>

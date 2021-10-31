@@ -3,7 +3,7 @@ import AllTour from '../AllTour/AllTour';
 import Bannar from '../Banner/Bannar';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import ClientReview from '../Review/ClientReview';
+import ClientReview from '../ClientReview/ClientReview';
 
 const Home = () => {
 

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from 'react-router';
 import useFirebase from "../../Hooks/useFirebase";
+import Button from "@restart/ui/esm/Button";
 
 const OrderServices = () => {
     const { user } = useFirebase();
-    const { key } = useParams();
+    const { _id } = useParams();
     const [tourDetails, setTourDetails] = useState([]);
     const [isDelete, setIsDelete] = useState(null);
 
@@ -13,9 +14,9 @@ const OrderServices = () => {
 
     // fetching all details
     useEffect(() => {
-        fetch(`http://localhost:5000/booking`)
+        fetch(`http://localhost:5000/addtour/${_id}`)
             .then(res => res.json())
-            .then(data => setTourDetails(data))
+            .then(data => console.log(data))
 
     }, [isDelete]);
     const handleDelete = (id) => {
@@ -33,6 +34,7 @@ const OrderServices = () => {
                 }
             });
     }
+
 
     const handleBuyNow = (index) => {
         const order = tourDetails[index];
@@ -62,23 +64,21 @@ const OrderServices = () => {
                                     <img src={pd?.image} className="card-img-top p-2" alt="..." />
 
                                     <h5>{pd?.name}</h5>
-                                    <h5>{pd?.price}</h5>
+                                    <h5 className="text-muted" >Price : ${pd?.price}/per person</h5>
                                     <h6>{pd?.description}</h6>
 
-                                    <button
+                                    <Button
                                         onClick={() => handleDelete(pd._id)}
                                         className="btn btn-success m-2"
                                     >
                                         Delete
-                                    </button>
+                                    </Button>
 
-
-                                    <button
+                                    <Link to="/dashboard"> <button
                                         onClick={() => handleBuyNow(index)}
                                         className="btn btn-warning m-2"
-                                    >
-                                        Book now
-                                    </button>
+                                    > Book now
+                                    </button></Link>
                                 </div>
 
                             </div>

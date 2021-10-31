@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import "./Tour.css";
 
 const Tour = (props) => {
-    const { key, name, image, description, price, day, person, place } = props.tour;
+    const { key, name, image, description, price, day, person, place, _id } = props.tour;
 
 
     return (
@@ -34,7 +34,7 @@ const Tour = (props) => {
                                     <FontAwesomeIcon icon={faStar} />
                                 </div>
                                 <div class="pb-2 d-flex justify-content-center ">
-                                    <Link to={`/alltour/${key}`} className="px-3" >    <Button className="btn-success   ">Booking Now</Button>
+                                    <Link to={`/alltour/${_id}`} className="px-3" >    <Button className="btn-success   ">Booking Now</Button>
                                     </Link>
 
                                 </div>

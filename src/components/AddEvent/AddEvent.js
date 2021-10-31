@@ -1,18 +1,23 @@
-import axios from "axios";
-import React from "react";
 
+import React from "react";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../Hooks/useFirebase";
 
-const AddEvents = () => {
+const AddBooking = () => {
+    const { user } = useFirebase();
+
     const {
         register,
         handleSubmit,
         watch,
+
         formState: { errors },
     } = useForm();
+
+
     const onSubmit = (data) => {
-        // console.log(data);
+        data.email = user.email;
+        console.log(data);
         fetch(`http://localhost:5000/addtour`, {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -22,41 +27,84 @@ const AddEvents = () => {
             .then((result) => console.log(result));
 
     };
+
+
+
+
     return (
         <div>
-            <h1>Add Booking</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                {/* register your input into the hook by invoking the "register" function */}
-                <input
-                    className="p-2 m-2"
-                    {...register("name")}
-                    required
-                    placeholder="place name"
-                />
+            <h1 className="mt-5 text-center text-dark">Please Add Booking</h1>
+            <div className="login-box w-25 m-auto mt-5">
+                <div className="event-box border border d-flex justify-content-center align-items-center">
+                    <div className="login-form">
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <input
+                                {...register("email")}
+                                placeholder="Email"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("name")}
+                                placeholder="name"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("place")}
+                                placeholder="Place"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("person")}
+                                placeholder="person"
+                                type="number"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("day")}
+                                placeholder="day"
+                                type="number"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("price")}
+                                placeholder="price"
+                                type="number"
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+                            <input
+                                {...register("description")}
+                                placeholder="Description"
 
-                {/* include validation with required or other standard HTML validation rules */}
-                <input
-                    className="p-2 m-2"
-                    type="number"
-                    {...register("price", { required: true })}
-                    required
-                    placeholder="number of people"
-                />
-                <input
-                    className="p-2 m-2"
-                    type="text"
-                    {...register("description", { required: true })}
-                    required
-                    placeholder="Description"
-                />
-                {/* errors will return when field validation fails  */}
-                {errors.exampleRequired && <span>This field is required</span>}
-                <br />
-                <input className="p-1 mt-3 btn btn-danger" type="submit" />
-            </form>
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+
+                            <input
+                                {...register("image", { required: true })}
+                                placeholder="Image Link"
+
+                                className="p-2 m-2 w-100"
+                            />
+                            <br />
+
+                            <br />
+
+                            {errors.exampleRequired && <span>This field is required</span>}
+
+                            <input type="submit" value="Add" className="btn btn-info w-50" />
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
 
 
-export default AddEvents;
+export default AddBooking;

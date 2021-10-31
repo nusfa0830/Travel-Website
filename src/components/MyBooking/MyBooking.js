@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 import useFirebase from '../../Hooks/useFirebase';
 
 const MyBooking = () => {
@@ -9,33 +10,52 @@ const MyBooking = () => {
         fetch(`http://localhost:5000/mybooking/${email}`)
             .then((res) => res.json())
             .then(data => setBooking(data))
-    }, [email])
-
+    }, [email, booking]);
 
 
     return (
         <div>
-            <h1>MY Booking :{booking.length} </h1>
+            <h1>MY Booking  </h1>
             <div className="all-products">
                 <div className="row container text-center">
-                    {booking?.map((pd, index) => (
+                    <Table striped bordered hover  >
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>User</th>
+                                <th>Name</th>
+                                <th>Place</th>
+                                <th>Day </th>
+
+                                <th>Price</th>
+
+                            </tr>
+                        </thead>
+                        {booking?.map((pd, index) => (
+
+                            <tbody className="" >
+                                <tr>
+                                    <td>{index}</td>
+                                    <td>{pd?.email}</td>
+                                    <td>{pd?.name}</td>
+
+                                    <td>{pd?.place}</td>
+
+                                    <td>{pd?.day}</td>
+
+                                    <td>${pd?.price}</td>
+
+                                </tr>
+                            </tbody>
 
 
-                        <div className="col-md-3 col-lg-4 col-1">
-                            <div className=" border border p-2 m-2">
-
-                                <h5>{pd?.place}</h5>
-                                <h5>{pd?.name}</h5>
-
-                                <h5>${pd?.price}/per person</h5>
-
-                                <button className="btn btn-danger m-2">delete</button>
-                            </div>
-                        </div>
 
 
 
-                    ))}
+
+
+                        ))}
+                    </Table>
                 </div>
             </div>
         </div>

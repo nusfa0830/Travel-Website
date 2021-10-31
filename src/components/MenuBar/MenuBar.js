@@ -15,28 +15,28 @@ const MenuBar = () => {
 
                         <img
                             alt=""
-
+                            src={"https://image.freepik.com/free-vector/detailed-travel-logo_23-2148616371.jpg"}
                             width="50"
                             height="50"
                             className="d-inline-block align-top
                         "
-                        />{' '}
+                        />
                         TRIPO
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" >
-                        <Nav className="d-flex align-items-end justify-content-end nav-item dropdown col-11">
+                        <Nav className="d-flex justify-content-end nav-item dropdown col-11">
                             <Nav.Link as={NavLink} to="/home" className="items ">
                                 <li>Home</li>
                             </Nav.Link>
                             <Nav.Link as={NavLink} to="/alltour" className="items">
                                 <li>Tours</li>
                             </Nav.Link>
-                            <Nav.Link as={NavLink} to="/addevent" className="items">
-                                <li>Add Event</li>
+                            <Nav.Link as={NavLink} to="/addBooking" className="items">
+                                <li>Add Booking</li>
                             </Nav.Link>
-                            <Nav.Link as={NavLink} to="/myCart" className="items">
-                                <li>Mycart</li>
+                            <Nav.Link as={NavLink} to="/dashboard" className="items">
+                                <li>Dashboard</li>
                             </Nav.Link>
 
 
