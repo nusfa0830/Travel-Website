@@ -25,8 +25,9 @@ const ManageBooking = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount) {
-                    setConrol(!control);
                     alert('Do You Want to Delete?');
+                    setConrol(!control);
+
                 } else {
                     setConrol(false);
                 }

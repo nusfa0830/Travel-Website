@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Nav } from 'react-bootstrap';
 import MenuBar from '../MenuBar/MenuBar';
+import useFirebase from '../../Hooks/useFirebase';
 
 const TourDetails = () => {
 
@@ -12,7 +13,7 @@ const TourDetails = () => {
     const [tourDetails, setTourDetails] = useState([]);
 
     const [tour, setTour] = useState({});
-
+    const { user } = useFirebase();
     // fetching all details
     useEffect(() => {
         fetch(`https://ghostly-beast-76655.herokuapp.com/tours`)
@@ -32,16 +33,21 @@ const TourDetails = () => {
 
 
     const onSubmit = (data) => {
-
+        data.email = user.email;
         fetch(`https://ghostly-beast-76655.herokuapp.com/addtour/${_id}`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then((result) => console.log(result));
-
-
+            .then((result) => {
+                console.log(result);
+                if (result.insertedId) {
+                    alert("Booked ");
+                } else {
+                    alert("Nothing Booked");
+                }
+            });
     };
 
 

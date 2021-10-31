@@ -4,7 +4,6 @@ import "./AdminDashBoard.css";
 
 import AllBooking from '../AllBooking/AllBooking';
 import ManageBooking from '../ManageBooking/ManageBooking';
-import MyBooking from '../MyBooking/MyBooking';
 import AddBooking from '../AddEvent/AddEvent';
 import MenuBar from '../MenuBar/MenuBar';
 

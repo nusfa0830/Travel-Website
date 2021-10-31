@@ -5,13 +5,14 @@ import { Button } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
-import useAuth from '../../Hooks/useAuth';
+
 import MenuBar from '../MenuBar/MenuBar';
 
 const LogIn = () => {
 
-    const { logInWithGoogle, user, setUser, gitHubSignIn, handleLogout, setIsLoading } =
-        useFirebase();
+    const { logInWithGoogle, user, setUser, setIsLoading } = useFirebase();
+
+
     const location = useLocation();
     const history = useHistory();
 
@@ -28,13 +29,7 @@ const LogIn = () => {
 
 
 
-
-
-
-
     return (
-
-
 
         <div>
             <div className="pb-5"><MenuBar></MenuBar></div>
