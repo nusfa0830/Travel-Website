@@ -5,12 +5,15 @@ import { Table } from "react-bootstrap";
 
 const AllBooking = () => {
     const [booking, setBooking] = useState([]);
+    const [isDelete, setIsDelete] = useState(null);
+
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addTour`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/booking`)
             .then((res) => res.json())
             .then((data) => setBooking(data));
-    }, []);
+    }, [isDelete]);
 
     // const handleDelete = (id) => {
 
@@ -33,13 +36,13 @@ const AllBooking = () => {
 
 
     return (
-        <div>
+        <div  >
             <h1> Allbooking {booking?.length}</h1>
-            <Table striped bordered hover  >
+            <Table striped bordered hover className="table-responsive" >
                 <thead>
                     <tr>
                         <th>No</th>
-
+                        <th>User</th>
                         <th>Name</th>
                         <th>Place</th>
                         <th>Day </th>
@@ -49,10 +52,10 @@ const AllBooking = () => {
                     </tr>
                 </thead>
                 {booking?.map((pd, index) => (
-                    <tbody className="" >
+                    <tbody className="px-2" >
                         <tr>
                             <td>{index}</td>
-
+                            <td>{pd?.email}</td>
                             <td>{pd?.name}</td>
 
                             <td>{pd?.place}</td>

@@ -11,7 +11,7 @@ const AllTour = () => {
 
     const [allTour, setAllTour] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/tours`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/tours`)
             .then(res => res.json())
             .then(data => setAllTour(data))
 
@@ -34,7 +34,7 @@ const AllTour = () => {
             <div className="py-5" >
 
                 <div>
-                    <h1 className=" p-2 ">Most Popular Tours </h1>
+                    <h1 className="p-2 ">Most Popular Tours </h1>
                 </div>
                 <div>
                     <Row xs={1} md={3} className="g-4">

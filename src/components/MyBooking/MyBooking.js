@@ -7,10 +7,11 @@ const MyBooking = () => {
     const email = user.email;
     const [booking, setBooking] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/mybooking/${email}`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/mybooking/${email}`)
             .then((res) => res.json())
             .then(data => setBooking(data))
-    }, [email, booking]);
+    }, [email, booking])
+
 
 
     return (
@@ -18,7 +19,7 @@ const MyBooking = () => {
             <h1>MY Booking  </h1>
             <div className="all-products">
                 <div className="row container text-center">
-                    <Table striped bordered hover  >
+                    <Table striped bordered hover className="table-responsive"  >
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -26,7 +27,7 @@ const MyBooking = () => {
                                 <th>Name</th>
                                 <th>Place</th>
                                 <th>Day </th>
-
+                                <th>Person</th>
                                 <th>Price</th>
 
                             </tr>
@@ -42,7 +43,7 @@ const MyBooking = () => {
                                     <td>{pd?.place}</td>
 
                                     <td>{pd?.day}</td>
-
+                                    <td>{pd?.person}</td>
                                     <td>${pd?.price}</td>
 
                                 </tr>

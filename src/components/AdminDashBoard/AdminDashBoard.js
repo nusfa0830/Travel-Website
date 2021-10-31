@@ -30,7 +30,7 @@ const AdminDashBoard = () => {
                                         onClick={() => setControl("allBooking")}
                                         className="admin-menu p-2"
                                     >
-                                        Manage  All Bookings
+                                        All Bookings
                                     </li>
 
                                     <li
@@ -39,19 +39,14 @@ const AdminDashBoard = () => {
                                     >
                                         Manage Booking
                                     </li>
-                                    <li onClick={() => setControl("myCart")}
 
-                                        className="admin-menu p-2"
-                                    >
-                                        My Cart
-                                    </li>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-9 text-center  text-center">{control === "addBooking" && <AddBooking></AddBooking>}
                             {control === "allBooking" && <AllBooking></AllBooking>}
                             {control === "manageBooking" && <ManageBooking></ManageBooking>}
-                            {control === "myCart" && <MyBooking></MyBooking>}
+
                         </div>
                     </div>
                 </div>

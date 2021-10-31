@@ -15,7 +15,7 @@ const TourDetails = () => {
 
     // fetching all details
     useEffect(() => {
-        fetch(`http://localhost:5000/tours`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/tours`)
             .then(res => res.json())
             .then(data => setTourDetails(data))
 
@@ -33,7 +33,7 @@ const TourDetails = () => {
 
     const onSubmit = (data) => {
 
-        fetch(`http://localhost:5000/addtour/${_id}`, {
+        fetch(`https://ghostly-beast-76655.herokuapp.com/addtour/${_id}`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

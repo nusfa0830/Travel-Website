@@ -14,14 +14,16 @@ const OrderServices = () => {
 
     // fetching all details
     useEffect(() => {
-        fetch(`http://localhost:5000/addtour/${_id}`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/booking`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setTourDetails(data))
 
     }, [isDelete]);
+
+
     const handleDelete = (id) => {
-        console.log(id)
-        fetch(`http://localhost:5000/deleteBooking/${id}`, {
+
+        fetch(`https://ghostly-beast-76655.herokuapp.com/${_id}`, {
             method: "DELETE",
             headers: { "Content-type": "application/json" },
         })
@@ -37,11 +39,12 @@ const OrderServices = () => {
 
 
     const handleBuyNow = (index) => {
+
         const order = tourDetails[index];
         order.email = user.email;
 
 
-        fetch(`http://localhost:5000/addMyBooking`, {
+        fetch(`https://ghostly-beast-76655.herokuapp.com/addMyBooking`, {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(order),

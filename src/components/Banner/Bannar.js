@@ -4,7 +4,7 @@ import 'animate.css';
 import { Badge } from 'react-bootstrap';
 const Bannar = () => {
     return (
-        <div className="pt-5" >
+        <div className="pt-5 pb-5" >
 
             <div className="body-name pt-5 mx-5">
                 <h1 className="star-icon" >Go Exotic Places

@@ -1,4 +1,4 @@
-# livesite:""
+# livesite:"https://travel-website-56fdd.web.app/";
 # Website Name is Tripo
 # It organaise Trips for people around the world
 # people can book there dream destination online via Tripo website 
@@ -8,7 +8,8 @@
 # you can add your tour destination
 # also you can mail us and contact us details via footer sectection
 # you can see travellers review on website
-Features of
+Features of website
+# use react-bootstrap
 # use spinner on website
 # adeed 6 tour on home page
 # two extra section added on home page 

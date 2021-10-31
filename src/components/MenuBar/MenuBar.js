@@ -25,7 +25,7 @@ const MenuBar = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" >
-                        <Nav className="d-flex justify-content-end nav-item dropdown col-11">
+                        <Nav className="d-flex justify-content-end nav-item dropdown fw-bold  col-11">
                             <Nav.Link as={NavLink} to="/home" className="items ">
                                 <li>Home</li>
                             </Nav.Link>
@@ -37,6 +37,9 @@ const MenuBar = () => {
                             </Nav.Link>
                             <Nav.Link as={NavLink} to="/dashboard" className="items">
                                 <li>Dashboard</li>
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to="/myCart" className="items">
+                                <li>My Booking </li>
                             </Nav.Link>
 
 

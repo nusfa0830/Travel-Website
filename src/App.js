@@ -19,7 +19,7 @@ import PrivateRoute from './Private/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
 
 
-
+import OrderServices from './components/OrderServices/OrderServices';
 import Register from './components/Register/Register';
 import AdminDashBoard from './components/AdminDashBoard/AdminDashBoard';
 import MyBooking from './components/MyBooking/MyBooking';
@@ -58,6 +58,7 @@ function App() {
             </Route>
             <PrivateRoute exact path="/alltour/:_id" >
               <TourDetails
+
               ></TourDetails>
             </PrivateRoute>
             <Route path="/login">
@@ -67,7 +68,7 @@ function App() {
               <Register></Register>
             </Route>
             <Route exact path="/tour/:_id">
-              <AdminDashBoard></AdminDashBoard>
+              <OrderServices></OrderServices>
             </Route>
             <PrivateRoute path="/addbooking">
               <AddBooking></AddBooking>
@@ -75,13 +76,15 @@ function App() {
             <PrivateRoute exact path="/dashboard">
               <AdminDashBoard></AdminDashBoard>
             </PrivateRoute>
-            <Route exact path="/myCart">
+            <PrivateRoute exact path="/myCart">
               <MyBooking></MyBooking>
-            </Route>
+            </PrivateRoute>
             <Route exact path="*">
               <NotFound></NotFound>
             </Route>
+
           </Switch>
+
         </Router>
       </AuthProvider>
     </div>

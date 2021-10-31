@@ -19,7 +19,7 @@ const AddBooking = () => {
     const onSubmit = (data) => {
         data.email = user.email;
         console.log(data);
-        fetch(`http://localhost:5000/addtour`, {
+        fetch(`https://ghostly-beast-76655.herokuapp.com/addtour`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

@@ -9,29 +9,29 @@ const ManageBooking = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addTour`)
+        fetch(`https://ghostly-beast-76655.herokuapp.com/booking`)
             .then((res) => res.json())
             .then((data) => setEvent(data));
     }, [control]);
     // delete handel 
     const handleDelete = (id) => {
-
         console.log(id)
-        fetch(`http://localhost:5000/addTour/${id}`, {
+
+        fetch(`https://ghostly-beast-76655.herokuapp.com/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
+
         })
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount) {
                     setConrol(!control);
-                    // alert for conformaton
-                    alert('Do you want to delete?')
+                    alert('Do You Want to Delete?');
                 } else {
                     setConrol(false);
                 }
             });
-        console.log(id);
+
     };
 
 
@@ -42,14 +42,14 @@ const ManageBooking = () => {
     return (
         <div className="container">
             <h1> All Booking {event?.length}</h1>
-
-            <Table striped bordered hover>
+            <Table striped bordered hover className="table-responsive">
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>User Email</th>
+
                         <th>Booked Place </th>
-                        <th>User</th>
-                        <th>Name</th>
+
 
                         <th>Image Link</th>
 
@@ -60,10 +60,9 @@ const ManageBooking = () => {
                     <tbody>
                         <tr>
                             <td>{index}</td>
-                            <td>{pd.place}</td>
                             <td>{pd?.email}</td>
-                            <td>{pd?.name}</td>
-                            <td>{pd.image}</td>
+                            <td>{pd?.place}</td>
+                            <td>{pd?.image}</td>
 
                             <button
                                 onClick={() => handleDelete(pd._id)}
