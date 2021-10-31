@@ -11,7 +11,7 @@ const MenuBar = () => {
 
             <Navbar bg="light" expand="lg" variant="light" fixed="top"  >
                 <Container fluid>
-                    <Navbar.Brand className="px-5 col-1" href="#home">
+                    <Navbar.Brand className="px-5 col-2" href="#home">
 
                         <img
                             alt=""
@@ -24,8 +24,8 @@ const MenuBar = () => {
                         TRIPO
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav" >
-                        <Nav className="d-flex justify-content-end nav-item dropdown fw-bold  col-11">
+                    <Navbar.Collapse id="basic-navbar-nav link" >
+                        <Nav className="d-flex justify-content-end nav-item dropdown fw-bold  col-10">
                             <Nav.Link as={NavLink} to="/home" className="items ">
                                 <li>Home</li>
                             </Nav.Link>

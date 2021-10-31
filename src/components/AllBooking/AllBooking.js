@@ -38,7 +38,7 @@ const AllBooking = () => {
     return (
         <div  >
             <h1> Allbooking {booking?.length}</h1>
-            <Table striped bordered hover className="table-responsive" >
+            <Table striped bordered hover className="table-responsive table-responsive-sm" >
                 <thead>
                     <tr>
                         <th>No</th>

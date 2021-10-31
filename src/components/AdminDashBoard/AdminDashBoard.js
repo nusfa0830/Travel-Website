@@ -6,13 +6,16 @@ import AllBooking from '../AllBooking/AllBooking';
 import ManageBooking from '../ManageBooking/ManageBooking';
 import MyBooking from '../MyBooking/MyBooking';
 import AddBooking from '../AddEvent/AddEvent';
+import MenuBar from '../MenuBar/MenuBar';
 
 const AdminDashBoard = () => {
     const [control, setControl] = useState("allBooking");
 
     console.log(control);
-    return (
-        <div className="admin-container">
+    return (<div>
+        <div className="pb-5" > <MenuBar></MenuBar> </div>
+        <div className="admin-container pt-4">
+
             <div className="dashboard">
                 <div className="admin-box">
                     <div className="row admin-container">
@@ -51,7 +54,7 @@ const AdminDashBoard = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  </div>
     );
 };
 
