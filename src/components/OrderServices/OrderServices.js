@@ -70,12 +70,7 @@ const OrderServices = () => {
                                     <h5 className="text-muted" >Price : ${pd?.price}/per person</h5>
                                     <h6>{pd?.description}</h6>
 
-                                    <Button
-                                        onClick={() => handleDelete(pd._id)}
-                                        className="btn btn-success m-2"
-                                    >
-                                        Delete
-                                    </Button>
+
 
                                     <Link to="/dashboard"> <button
                                         onClick={() => handleBuyNow(index)}

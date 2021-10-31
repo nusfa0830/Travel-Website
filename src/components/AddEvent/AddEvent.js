@@ -2,6 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../Hooks/useFirebase";
+import Footer from "../Footer/Footer";
 import MenuBar from "../MenuBar/MenuBar";
 
 const AddBooking = () => {
@@ -33,11 +34,11 @@ const AddBooking = () => {
 
 
     return (
-        <div>
+        <div className="pb-5" >
             <div className="pb-5"><MenuBar></MenuBar></div>
 
             <h1 className="mt-5 text-center text-dark">Please Add Booking</h1>
-            <div className="login-box w-25 m-auto mt-5">
+            <div className="login-box w-25 m-auto mt-5 pb-4 ">
                 <div className="event-box border border d-flex justify-content-center align-items-center">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -100,11 +101,12 @@ const AddBooking = () => {
 
                             {errors.exampleRequired && <span>This field is required</span>}
 
-                            <input type="submit" value="Add" className="btn btn-info w-50" />
+                            <input type="submit" value="Add" className="btn btn-info w-50 " />
                         </form>
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
